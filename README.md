@@ -10,28 +10,35 @@ https://docs.opencv.org/4.5.3/d7/d9f/tutorial_linux_install.html
 uname -a
 ```
 
-  The result:
+The result:
 
-  ```
-  Linux my-computer-name 5.11.0-37-generic #41~20.04.2-Ubuntu SMP Fri Sep 24 09:06:38 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
-  ```
+```
+Linux my-computer-name 5.11.0-37-generic #41~20.04.2-Ubuntu SMP Fri Sep 24 09:06:38 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
+```
 
-## Download latest version of OpenCV 4 from GitHub
+## Download latest version of OpenCV 4 Core from GitHub
+
+Core modules:
 
 ```console
 wget -O https://github.com/opencv/opencv/archive/refs/tags/4.5.3.tar.gz
+```
+Extra modules:
+
+```console
+wget -O https://github.com/opencv/opencv_contrib/archive/refs/tags/4.5.3.tar.gz
 ```
 
 ## Extract the source
 
 ```console
 tar -xzf opencv-4.5.3.tar.gz
+tar -xzf opencv_contrib-4.5.3.tar.gz 
 ```
 
 ## Create build directory
 
 ```console
-cd opencv-4.5.3
 mkdir -p build
 cd build
 ```
@@ -42,16 +49,14 @@ cd build
 sudo apt update && sudo apt install -y cmake g++ wget
 ```
 
-## Build core modules
-
-### Configure
+## Configure
 
 ```console
-cmake  ..
+cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.5.3/modules ../opencv-4.5.3
 ```
 
-### Build
+## Build
 
 ```console
-cmake --build .
+make -j8
 ```
