@@ -60,3 +60,9 @@ cmake -DOPENCV_EXTRA_MODULES_PATH=../opencv_contrib-4.5.3/modules ../opencv-4.5.
 ```console
 make -j8
 ```
+
+## Install
+
+```console
+sudo make install
+```
