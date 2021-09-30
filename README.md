@@ -16,7 +16,7 @@ The result:
 Linux my-computer-name 5.11.0-37-generic #41~20.04.2-Ubuntu SMP Fri Sep 24 09:06:38 UTC 2021 x86_64 x86_64 x86_64 GNU/Linux
 ```
 
-## Download latest version of OpenCV 4 Core from GitHub
+## Download latest version of OpenCV 4 from GitHub
 
 Core modules:
 
